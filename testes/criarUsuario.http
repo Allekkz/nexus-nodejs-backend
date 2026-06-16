@@ -1,0 +1,10 @@
+
+POST http://localhost:3000/usuarios/register
+Content-Type: application/json
+
+{
+    "nome": "Alex Campos",
+    "email": "alexcascampos2002@gmail.com",
+    "curso": "Ciência da computação",
+    "senha": "raissa123"
+}

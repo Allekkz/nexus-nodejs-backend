@@ -1,0 +1,10 @@
+POST http://localhost:3000/postagens
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzgxNDcxMzAyLCJleHAiOjE3ODE1NTc3MDJ9.YiU9ZwNGhZb8PrRc9umJulByUQ1lEBqqegFRxU3vvE0
+
+{
+    "titulo": "Postagem com imagem",
+    "descricao": "Bem, testes são importantes, não é mesmo? Então aqui está a minha segunda postagem para testar a criação de postagens na minha API.",
+    "imgUrl": "https://i.pinimg.com/originals/0d/03/ab/0d03ab518757191a341f3677f936d1d4.gif",
+    "autorId": 1
+}

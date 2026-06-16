@@ -1,0 +1,8 @@
+POST http://localhost:3000/postagens/2/comentarios
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzgxNDcxMzAyLCJleHAiOjE3ODE1NTc3MDJ9.YiU9ZwNGhZb8PrRc9umJulByUQ1lEBqqegFRxU3vvE0
+
+{
+    "conteudo": "Comentando na postagem de teste 2 certo agora",
+    "postagemId": 2
+}
