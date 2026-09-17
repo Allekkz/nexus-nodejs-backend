@@ -9,6 +9,7 @@ const controller = new PostagemController();
 router.get("/", authMiddleware, controller.listarPostagens);
 router.get("/:id", authMiddleware, controller.buscarPostagemPorId);
 router.get("/usuario/:id", authMiddleware, controller.listarPostagensPorUsuario);
+router.get("/curso/:curso", authMiddleware, controller.listarPostagensPorCurso);
 
 router.post("/", authMiddleware, controller.criarPostagem);
 router.put("/:id", authMiddleware, controller.atualizarPostagem);
