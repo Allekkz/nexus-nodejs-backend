@@ -93,4 +93,21 @@ export class PostagemController {
 
         }
     }
+
+    async listarPostagensPorCurso(req: Request, res: Response) {
+        try {
+            const curso = String(req.params.curso);
+
+            const postagens = await postagemService.listarPostagensPorCurso(
+                curso
+            );
+
+            return res.json(postagens);
+
+        } catch (error: any) {
+            return res.status(400).json({
+                erro: "Erro ao buscar postagens por curso: " + error.message
+            });
+        }
+    }
 }
