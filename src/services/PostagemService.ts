@@ -298,4 +298,65 @@ export class PostagemService {
 
         return postagens;
     }
+
+    async listarPostagensPorCurso(curso: string) {
+        const postagens = await prisma.postagem.findMany({
+            where: {
+                autor: {
+                    curso: curso
+                }
+            },
+
+            select: {
+                id: true,
+                titulo: true,
+                descricao: true,
+                imgUrl: true,
+                createdAt: true,
+
+                autor: {
+                    select: {
+                        id: true,
+                        nome: true,
+                        imgUrl: true
+                    }
+                },
+
+                curtidas: true,
+
+                comentarios: {
+                    orderBy: {
+                        createdAt: "desc"
+                    },
+
+                    select: {
+                        id: true,
+                        conteudo: true,
+                        createdAt: true,
+
+                        autor: {
+                            select: {
+                                id: true,
+                                nome: true,
+                                imgUrl: true
+                            }
+                        }
+                    }
+                },
+
+                _count: {
+                    select: {
+                        comentarios: true,
+                        curtidas: true
+                    }
+                }
+            },
+
+            orderBy: {
+                createdAt: "desc"
+            }
+        });
+
+        return postagens;
+    }
 }
